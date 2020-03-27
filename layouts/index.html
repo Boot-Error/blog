@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{ partial "header.html" }}
+	</head>
+	<body class="hack dark main container">
+		<header>
+		  {{ partial "menu" . }}
+		</header>
+		<main>
+		  <h1>{{ .Title }}</h1>
+		  {{ .Content }}
+		  <hr/>
+		  {{ range (where .Site.RegularPages.ByTitle "Section" "post" ) }}
+			<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+			<p>{{ .Summary }}</p>
+		  {{ end }}
+		</main>
+		<footer>
+		  <!-- {{ partial "pagination" . }} -->
+		</footer>
+	</body>
+</html>

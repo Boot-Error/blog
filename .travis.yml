@@ -1,0 +1,15 @@
+install:
+    - rm -rvf public/* || exit 0
+
+script:
+    - ./bin/hugo
+
+deploy:
+    local_dir: public
+    repo: Boot-Error/Boot-Error.github.io
+    target_branch: master
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    on:
+        branch: master
