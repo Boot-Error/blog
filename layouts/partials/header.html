@@ -2,7 +2,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ .Site.Title }}</title>
-<meta name="description" content="{{ .Site.Params.description }}">
+<meta property="og:title" content="Ramblings from Vighnesh" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Baseurl }}" />
+<meta property="og:image" content="flying_toaster.jpg" />
+<meta property="og:description" content="{{ .Description }}">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack/0.8.1/hack.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack/0.8.1/dark.css">
