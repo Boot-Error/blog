@@ -27,6 +27,5 @@ Co Founded [CybersecNITD](https://cybersecnitd.github.io), I write content there
 ## Find me on
 
 [github](https://github.com/Boot-Error/) 
-[twitter](https://twitter.com/ViggyVig) 
-[medium](https://medium.com/@ViggyVig)
+[twitter](https://twitter.com/b00terr) 
 [linkedin](https://www.linkedin.com/in/vighnesh-sk-4170b4127/)
