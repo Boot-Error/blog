@@ -5,7 +5,7 @@ title = "Vighnesh's Musings" # Homepage title and page title suffix
 paginate = 5 # Number of posts to show before paginating
 
 enableRobotsTXT = false # Suggested, enable robots.txt file
-googleAnalytics = "" # Optional, add tracking Id for analytics
+googleAnalytics = "UA-162174989-1" # Optional, add tracking Id for analytics
 SectionPagesMenu = "main" # Enable menu system for lazy bloggers
 
 [params]
