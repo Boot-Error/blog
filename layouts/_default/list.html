@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  {{ range .Data.Pages }}
+  {{ range .Data.Pages.ByPublishDate }}
     <article>
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       <p>{{ .Summary }}</p>

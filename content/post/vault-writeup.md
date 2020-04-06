@@ -1,5 +1,6 @@
 +++
 title = "vault - TAMUctf writeup"
+published = "29-03-2020"
 tags = ["ctf-writeup", "reversing", "radare"]
 +++
 

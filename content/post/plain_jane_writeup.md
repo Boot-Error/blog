@@ -1,5 +1,6 @@
 +++
 title = "plain_jane - AUCTF writeup"
+published = "06-04-2020"
 tags = ["ctf-writeup", "reversing", "radare"]
 +++
 

@@ -11,7 +11,7 @@
 		  <h1>{{ .Title }}</h1>
 		  {{ .Content }}
 		  <hr/>
-		  {{ range (where .Site.RegularPages.ByTitle "Section" "post" ) }}
+		  {{ range (where .Site.RegularPages.ByTitle "Section" "post" ).ByPublishDate.Reverse }}
 			<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
 			<p>{{ .Summary }}</p>
 		  {{ end }}
