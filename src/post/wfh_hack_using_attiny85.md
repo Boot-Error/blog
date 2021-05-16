@@ -2,7 +2,7 @@
 layout: blog.njk
 type: post
 title: "WFH Hack with Attiny85"
-tldr: "Ghosting myself at work, for good reason"
+tldr: "Using Attiny85 to ghost myself at work, with a good intention"
 date: 2021-03-25
 tags:
   - arduino
