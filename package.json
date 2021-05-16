@@ -1,0 +1,48 @@
+{
+  "name": "booterror-blog",
+  "version": "0.5.0",
+  "description": "Personal Blog built using 11ty framework",
+  "scripts": {
+    "clean": "rimraf public src/css/styles.css",
+    "postcss": "postcss src/_includes/postcss/*.pcss --dir src/css --ext css",
+    "dev": "npm run clean && eleventy --serve",
+    "build": "npm run clean && NODE_ENV=production npm run postcss && eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boot-Error/blog.git"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "tailwind",
+    "tailwindcss",
+    "purgecss",
+    "postcss"
+  ],
+  "author": "Boot-Error",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Boot-Error/blog/issues"
+  },
+  "homepage": "https://github.com/Boot-Error/blog#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@toycode/markdown-it-class": "^1.2.4",
+    "autoprefixer": "^10.2.5",
+    "cssnano": "^5.0.1",
+    "postcss": "^8.2.12",
+    "postcss-cli": "^8.3.1",
+    "postcss-css-variables": "^0.17.0",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^2.1.1"
+  },
+  "dependencies": {
+    "eleventy-plugin-purgecss": "^0.1.1",
+    "lodash": "^4.17.21",
+    "markdown-it-anchor": "^7.1.0",
+    "markdown-it-block-image": "0.0.3",
+    "moment": "^2.29.1",
+    "postcss-nested": "^5.0.5"
+  }
+}

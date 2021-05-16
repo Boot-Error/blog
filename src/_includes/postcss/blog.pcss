@@ -1,0 +1,63 @@
+/* Markdown content */
+p.markdown {
+  @apply text-lg font-normal px-5 pt-3 text-black;
+}
+
+ul.markdown {
+  @apply text-lg font-normal text-primary px-7 pt-3 list-inside list-disc;
+}
+
+ol.markdown {
+  @apply text-lg font-normal text-primary px-7 pt-3 list-inside list-decimal;
+}
+
+a.markdown {
+  @apply text-secondary underline;
+}
+
+h2.markdown {
+  @apply text-3xl font-bold px-5 pt-7 pb-3 align-middle text-gruvred;
+}
+
+h3.markdown {
+  @apply text-2xl font-bold px-5 pt-5 pb-2 text-gruvgreen;
+}
+
+pre {
+  @apply my-3 lg:mx-5 px-5 py-3 bg-black text-white overflow-x-auto;
+}
+
+pre > code {
+  @apply text-white bg-black;
+}
+
+p > code {
+  @apply bg-gray-200 text-base px-1 rounded-sm;
+}
+
+img.markdown {
+  @apply w-full;
+}
+
+div.image-container {
+  @apply max-w-lg mx-auto my-5;
+}
+
+a.header-anchor {
+  @apply text-lg my-1;
+}
+
+/* Header */
+nav.blog-nav {
+  @apply container max-w-screen-md mx-auto mt-7 px-5;
+}
+
+p.blog-nav-text {
+  @apply text-lg lg:text-lg font-bold hover:underline text-secondary;
+}
+
+img.social-icon {
+  /* width: 27px; */
+  /* height: 27px; */
+  @apply h-5 w-5 mx-2 my-1;
+}

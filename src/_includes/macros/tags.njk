@@ -1,0 +1,13 @@
+{% macro tags(allTags) %}
+<section>
+  <ul class="flex flex-wrap">
+    {% for tag in allTags %}
+    <li>
+      <a class="font-semibold hover:underline px-1" href="/tag/{{ tag }}"
+        >#{{ tag }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endmacro %}

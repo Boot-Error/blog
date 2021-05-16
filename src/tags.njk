@@ -1,0 +1,23 @@
+---
+layout: base.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tag/{{ tag }}/
+---
+
+{% from "macros/cards.njk" import postCard %}
+{% set taglist = collections[ tag ] %}
+{% include 'partials/blog-nav.njk' %}
+
+<header class="the-box text-center py-20">
+  <h1 class="font-semibold text-4xl text-center">#{{ tag }}</h1>
+  <p>A collection of {{ taglist | length }} posts</p>
+</header>
+
+<section class="the-box grid ">
+    {% for post in taglist | reverse %}
+        {{ postCard(post) }}
+    {% endfor %}
+</section>
