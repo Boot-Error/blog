@@ -24,8 +24,8 @@ type: index
 <section class="the-box mt-10 md:py-20">
   {% for year, yearPosts in collections.postsByYear %}
     <article class="mt-3">
-      {# <h2 class="font-bold text-2xl">{{ year }}</h2> #}
-      <div class="grid divide-y divide-primary">
+      <h2 class="font-bold text-2xl">{{ year }}</h2>
+      <div class="grid">
         {% for post in yearPosts | reverse %}
           {{ postCard(post) }}
         {% endfor %}
@@ -33,5 +33,3 @@ type: index
     </article>
   {% endfor %}
 </section>
-
-{% include 'partials/blog-footer.njk' %}
