@@ -6,7 +6,7 @@
     "clean": "rimraf public src/css/styles.css",
     "postcss": "postcss src/_includes/postcss/*.pcss --dir src/css --ext css",
     "dev": "npm run clean && eleventy --serve",
-    "build": "npm run clean && NODE_ENV=production npm run postcss && eleventy"
+    "build": "npm run clean && NODE_ENV=production eleventy"
   },
   "repository": {
     "type": "git",
