@@ -30,7 +30,7 @@
     "@11ty/eleventy": "^0.12.1",
     "@toycode/markdown-it-class": "^1.2.4",
     "autoprefixer": "^10.2.5",
-    "cssnano": "^5.0.1",
+    "cssnano": "^5.0.2",
     "postcss": "^8.2.12",
     "postcss-cli": "^8.3.1",
     "postcss-css-variables": "^0.17.0",
