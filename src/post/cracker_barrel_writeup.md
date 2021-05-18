@@ -1,7 +1,7 @@
 ---
 layout: blog.njk
 type: post
-title: "cracker_barrel - AUCTF writeup"
+title: "AUCTF writeup - cracker_barrel"
 date: 2020-04-06
 tags: ["ctf-writeup", "reversing", "radare"]
 ---

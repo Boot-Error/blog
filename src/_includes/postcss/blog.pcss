@@ -1,14 +1,23 @@
 /* Markdown content */
 p.markdown {
-  @apply text-lg font-normal px-5 pt-3 text-black;
+  @apply text-lg font-normal px-5 pt-3 text-primary;
+  code {
+    @apply bg-light-soft text-base px-1 rounded-sm;
+  }
 }
 
 ul.markdown {
   @apply text-lg font-normal text-primary px-7 pt-3 list-inside list-disc;
+  code {
+    @apply bg-light-soft text-base px-1 rounded-sm;
+  }
 }
 
 ol.markdown {
   @apply text-lg font-normal text-primary px-7 pt-3 list-inside list-decimal;
+  code {
+    @apply bg-light-soft text-base px-1 rounded-sm;
+  }
 }
 
 a.markdown {
@@ -16,23 +25,18 @@ a.markdown {
 }
 
 h2.markdown {
-  @apply text-3xl font-bold px-5 pt-7 pb-3 align-middle text-gruvred;
+  @apply text-3xl font-bold px-5 pt-7 pb-3 align-middle text-primary;
 }
 
 h3.markdown {
-  @apply text-2xl font-bold px-5 pt-5 pb-2 text-gruvgreen;
+  @apply text-2xl font-bold px-5 pt-5 pb-2 text-primary;
 }
 
 pre {
-  @apply my-3 lg:mx-5 px-5 py-3 bg-black text-white overflow-x-auto;
-}
-
-pre > code {
-  @apply text-white bg-black;
-}
-
-p > code {
-  @apply bg-gray-200 text-base px-1 rounded-sm;
+  @apply my-3 lg:mx-5 px-5 py-3 bg-dark-1 overflow-x-auto;
+  code {
+    @apply text-light-1;
+  }
 }
 
 img.markdown {

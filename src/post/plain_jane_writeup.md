@@ -1,7 +1,7 @@
 ---
 layout: blog.njk
 type: post
-title: "plain_jane - AUCTF writeup"
+title: "AUCTF writeup - plain_jane"
 date: 2020-04-06
 tags:
   - ctf-writeup

@@ -1,7 +1,7 @@
 ---
 layout: blog.njk
 type: post
-title: "vault - TAMUctf writeup"
+title: "TAMUctf writeup - vault"
 date: 2020-03-29
 tags:
   - ctf-writeup

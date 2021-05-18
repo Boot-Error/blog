@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="{{ post.data.tldr }}"/>
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/css/base.css"/>
+    {% include 'partials/imports.njk' %}
     <link rel="stylesheet" href="/css/blog.css"/>
   </head>
   <body>
@@ -13,13 +13,13 @@
       {% include 'partials/blog-nav.njk' %}
       <div class="container max-w-screen-md mx-auto lg:mt-20">
         <article>
-          <header class="pt-7 pb-3 lg:mt-20">
-            <h1 class="text-5xl py-3 px-5">{{ title }}</h1>
-            <div class="flex display-x pt-3">
-              <time datetime="{{ page.date }}" class="text-sm text-primary font-bold px-5">
+          <header class="px-5 pt-7 pb-3 lg:mt-20">
+            <h1 class="text-5xl py-3">{{ title }}</h1>
+            <div class="flex display-y pt-3 display-grey-500">
+              <time datetime="{{ page.date }}" class="text-base text-primary font-bold">
                 {{ page.date | prettyDate }}
               </time>
-              <div class="text-sm">{{ displayTags(tags) }}</div>
+              <div class="text-base pl-5">{{ displayTags(tags) }}</div>
             </div>
           </header>
           {{ content | safe }}

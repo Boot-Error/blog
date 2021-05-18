@@ -2,6 +2,7 @@ const _ = require("lodash");
 const moment = require("moment");
 const { spawnSync } = require("child_process");
 const purgeCssPlugin = require("eleventy-plugin-purgecss");
+const readMorePlugin = require("eleventy-plugin-read-more");
 
 const compilePostcss = () => {
   console.log("Compiling postcss..");
@@ -65,7 +66,6 @@ const allTagsColletion = (collection) => {
     .uniq()
     .sort()
     .value();
-  console.log(allTags);
   return allTags;
 };
 
@@ -96,6 +96,7 @@ module.exports = function (eleventyConfig) {
     config: "./purgecss.config.js",
     quiet: false,
   });
+  eleventyConfig.addPlugin(readMorePlugin);
 
   eleventyConfig.addFilter("prettyDate", (date) => {
     return moment(date).format("Do MMM, YYYY");
