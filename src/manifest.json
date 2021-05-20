@@ -1,0 +1,26 @@
+{
+  "short_name": "Vighnesh's Musings",
+  "name": "Vighnesh's Musings",
+  "icons": [
+    {
+      "src": "/img/me_outline.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#F9F5D7",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#F9F5D7",
+  "shortcuts": [
+    {
+      "name": "Vighnesh's Musings",
+      "short_name": "Vighnesh",
+      "description": "Personal blog of Vighnesh SK",
+      "url": "/?source=pwa",
+      "icons": [{ "src": "/images/me_outline.png", "sizes": "512x512" }]
+    }
+  ],
+  "description": "Personal Blog of Vighnesh SK"
+}

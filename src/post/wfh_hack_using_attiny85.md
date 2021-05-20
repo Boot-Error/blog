@@ -21,7 +21,7 @@ And I can't change the screensaver settings, which is acceptable. Hence, I came 
 
 A friend of mine came up with a simple hack, where he would place his Analog Watch underneath the mouse's optical sensor. The movement of the second hand would constantly trigger some mouse activity which stops his laptop from hibernating.
 
-This is great, but I felt it too tedious and I didn't have a watch (duh I got my smartphone to check time). I needed a better solution.
+This is great, but I felt it too tedious and I didn't have a watch (duh I got my smartphone to check time). I need a better solution.
 
 ## Meet Attiny85
 
@@ -45,7 +45,32 @@ Follow instructions [here](https://www.instructables.com/Digispark-Attiny-85-Wit
 
 Here is the code, the phantom user to my computer!
 
-{{< gist Boot-Error 394b2102a1a23b8baf0bc80c18ebe898 >}}
+```cpp
+#include <DigiMouse.h>
+
+// wait for DELAY_MINUTES, this is less than your
+// screen saver's timeout
+#define DELAY_MINUTES 2
+
+void setup(){
+  DigiMouse.begin();
+  pinMode(1, OUTPUT);
+}
+ 
+void loop() {
+  while(true) {
+    // blinks the on-board LED to indicate mouse movement
+    digitalWrite(1, HIGH);
+    // moves the cursor right 30px
+    DigiMouse.move(30 ,0,0);
+    DigiMouse.delay(50);
+    // move the cursor left 30px
+    DigiMouse.move(-30,0,0);
+    digitalWrite(1, LOW)
+    DigiMouse.delay(DELAY_MINUTES * 60000);
+  }
+}
+```
 
 Compile and upload the sketch and watch your computer tricked into thinking you are always working!
 
