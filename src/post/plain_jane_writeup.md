@@ -17,7 +17,7 @@ First, compile it to binary using `gcc`
 
 ### Compile
 
-```sh
+```shell
 gcc -o plain_jane plain_jane.s
 ```
 
@@ -25,7 +25,7 @@ Then open the binary in radare.
 
 ### Recon
 
-```radare2
+```
 o plain_jane
 aaa
 i
@@ -73,7 +73,7 @@ i
     subsys   linux
     va       true
 
-```radare2
+```
 aflm
 ```
 
@@ -95,7 +95,7 @@ aflm
 
 So we have `main` calling 3 functions `func_1`, `func_2` and `func_3`
 
-```radare2
+```
 s main
 pdf
 ```
@@ -132,7 +132,7 @@ Running the program in debugger and setting a breakpoint at `0x0000114a` should 
 
 ### Debug to get the flag
 
-```radare2
+```
 ood
 s main
 pdf
@@ -163,13 +163,13 @@ pdf
     │           0x55c1cd642152      c9             leave
     └           0x55c1cd642153      c3             ret
 
-```radare2
+```
 dcu 0x55c1cd64214a
 ```
 
 At this state, the value returned from `func_3` is stored in `eax` register. Let's inspect the registers.
 
-```radare2
+```
 dr
 ```
 
@@ -195,7 +195,7 @@ dr
 
 In `x86_64`, the `rax` register's lower half i.e the 32bits from LSB is the value stored in `eax`. On converting `0x6fcf` into a decimal, we should get the flag.
 
-```radare2
+```
 ? 0x6fcf
 ```
 
