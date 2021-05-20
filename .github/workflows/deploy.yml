@@ -1,5 +1,4 @@
-
-name: DeployToPages
+name: DeployWebsite
 on:
   push:
     branches: [main]
@@ -8,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-site:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,7 +21,24 @@ jobs:
         run: |
           npm ci
           npm run build
+          
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: site-build
+          path: ./public
 
+  publish-gh-pages:
+    needs: build-site
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+      - name: Fetch site-build
+        uses: actions/download-artifact@v2
+        with:
+          name: site-build
+          path: ./public
+    
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
