@@ -7,11 +7,7 @@
       <a class="font-bold text-2xl text-secondary" href="{{ post.url | url }}">{{post.data.title}}</a>
     </div>
     <div class="pb-3">
-      {% if post.data.tldr %}
       <p>{{ post.data.tldr }}</p>
-      {% else %}
-      <p>{{ "hello, world <!--more--> xyz" | excerpt }}
-      {% endif %}
     </div>
     <div>{{ tags(post.data.tags) }}</div>
   </section>
