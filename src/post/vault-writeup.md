@@ -20,12 +20,12 @@ I'll be using `radare2` using `jupyter-radare2` kernel.
 
 First let's analyze the binary.
 
-```radare2
+```
 o vault
 aaa
 ```
 
-```radare2
+```
 i
 ```
 
@@ -77,7 +77,7 @@ It's ELF 64 and not `stripped`. Awww yea!
 
 Analyzing the function call stack, it's evident that it takes input from user using `fgets` and displays results.
 
-```radare2
+```
 aflm
 ```
 
@@ -107,7 +107,7 @@ And `deobfuscate` is a defined function. Might be something related to password?
 
 ### Analyze `main`
 
-```radare2
+```
 s main
 pdf
 ```
@@ -174,7 +174,7 @@ At this stage, I'm pretty sure the string in `s1` created from `deobfuscate` is 
 
 Let's check the disassembly of `deobfuscate`
 
-```radare2
+```
 s sym.deobfuscate
 pdf
 ```
@@ -232,13 +232,13 @@ Why don't we just debug it.
 
 ### Debugging to get the flag
 
-```radare2
+```
 ood
 ```
 
     73743
 
-```radare2
+```
 dcu main
 pd
 ```
@@ -299,7 +299,7 @@ pd
 
 Now the program is memory as a process. We have it hit a brekpoint at beginning of `main` to see the locations in memory of the program. The `deobfuscation` is called at address `0x559ab2a2d31d`. We now set a breakpoint at the next instruction `0x559ab2a2d322`.
 
-```radare2
+```
 dcu 0x559ab2a2d322
 ```
 
@@ -308,7 +308,7 @@ The function is called and it has filled the location `s1` in memory with a stri
 
 Examining strings at the memory location in `rdi`
 
-```radare2
+```
 x/s @ rdi
 ```
 

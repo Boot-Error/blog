@@ -12,7 +12,7 @@ Let's rev it up.
 
 ### recon
 
-```radare2
+```
 o cracker_barrel
 aaa
 i
@@ -62,7 +62,7 @@ i
 
 It's ELF64, I can run it locally too. Let's look into the functions.
 
-```radare2
+```
 aflm
 ```
 
@@ -118,7 +118,7 @@ aflm
 
 so we have `check` function called by `main` and inside it there are 3 functions `check_1`, `check_2` and `check_3`
 
-```radare2
+```
 s main
 pdg
 ```
@@ -145,7 +145,7 @@ Decompiling `main` using [r2ghidra-dec](https://github.com/radareorg/r2ghidra-de
 
 So, `check` returns a boolean and if it's true we will get the flag.
 
-```radare2
+```
 s sym.check
 pdg
 ```
@@ -195,7 +195,7 @@ There you have, your cascading `if` statements. Seems we need to dig deeper.
 
 ### solving `check_1`
 
-```radare2
+```
 s sym.check_1
 pdg
 ```
@@ -229,7 +229,7 @@ Moving to `check_2`
 
 ### solving `check_2`
 
-```radare2
+```
 s sym.check_2
 pdg
 ```
@@ -263,7 +263,7 @@ Moving on to `check_3`
 
 ### solving `check_3`
 
-```radare2
+```
 s sym.check_3
 pdg
 ```
