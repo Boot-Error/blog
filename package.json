@@ -39,7 +39,9 @@
     "tailwindcss": "^2.1.2"
   },
   "dependencies": {
+    "eleventy-plugin-json-feed": "0.0.7",
     "eleventy-plugin-purgecss": "^0.1.1",
+    "eleventy-plugin-pwa": "^1.0.8",
     "eleventy-plugin-read-more": "^1.0.2",
     "lodash": "^4.17.21",
     "markdown-it-anchor": "^7.1.0",

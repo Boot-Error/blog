@@ -1,0 +1,16 @@
+---
+permalink: "feed.json"
+metadata:
+  title: "Personal Blog of Vighnesh SK"
+  home_page_url: "https://boot-error.github.io/"
+  description: string providing more detail about feed
+  feed_url: "https://boot-error.github.io/feed.json"
+  user_comment: purpose of the feed
+  icon: "https://boot-error.github.io/img/me_outline.png"
+  author:
+    name: Vighnesh SK
+    url: "https://boot-error.github.io"
+    avatar: "https://boot-error.github.io/img/me_outline.png"
+  expired: false
+---
+{% jsonFeed collections.posts, metadata, 10 %}

@@ -3,6 +3,9 @@ const moment = require("moment");
 const { spawnSync } = require("child_process");
 const purgeCssPlugin = require("eleventy-plugin-purgecss");
 const readMorePlugin = require("eleventy-plugin-read-more");
+const pwaPlugin = require("eleventy-plugin-pwa");
+const jsonFeedPlugin = require("eleventy-plugin-json-feed");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const compilePostcss = () => {
   console.log("Compiling postcss..");
@@ -79,29 +82,56 @@ const postsByYearCollection = (collection) => {
   return postsByYear;
 };
 
+const allPostsCollection = (collection) => {
+  const allPosts = _.chain(collection.getAllSorted())
+    .filter((post) => _.eq(_.get(post, "data.type"), "post"))
+    .reverse()
+    .value();
+  return allPosts;
+};
+
 module.exports = function (eleventyConfig) {
+  // pass through copy
   eleventyConfig.addPassthroughCopy("./src/css/");
   eleventyConfig.addPassthroughCopy("./src/img");
+  eleventyConfig.addPassthroughCopy("./src/manifest.json");
+
+  // collections
+  eleventyConfig.addCollection("posts", allPostsCollection);
   eleventyConfig.addCollection("postsByYear", postsByYearCollection);
   eleventyConfig.addCollection("allTags", allTagsColletion);
 
+  // shortcodes
   eleventyConfig.addShortcode("postCard", (postTitle) => {
     return ``;
   });
 
+  // build hooks
   eleventyConfig.on("afterBuild", () => {
     compilePostcss();
   });
+
+  // plugins
   eleventyConfig.addPlugin(purgeCssPlugin, {
     config: "./purgecss.config.js",
     quiet: false,
   });
+  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(readMorePlugin);
+  eleventyConfig.addPlugin(pwaPlugin);
+  eleventyConfig.addPlugin(jsonFeedPlugin, {
+    content_html: true,
+    image_metadata_field_name: "social_media_image",
+    summary_metadata_field_name: "description",
+    tags_metadata_field_name: "categories",
+  });
 
+  // filters
   eleventyConfig.addFilter("prettyDate", (date) => {
     return moment(date).format("Do MMM, YYYY");
   });
 
+  // libraries
   eleventyConfig.setLibrary("md", markdownLib());
 
   return {
