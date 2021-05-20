@@ -7,6 +7,7 @@
     <title>{{ title }}</title>
     {% include 'partials/imports.njk' %}
     <link rel="stylesheet" href="/css/blog.css"/>
+    <link rel="stylesheet" href="/css/prism-theme.css">
   </head>
   <body>
     <main>
@@ -14,7 +15,7 @@
       <div class="container max-w-screen-md mx-auto lg:mt-20">
         <article>
           <header class="px-5 pt-7 pb-3 lg:mt-20">
-            <h1 class="text-5xl py-3">{{ title }}</h1>
+            <h1 class="text-5xl py-3 leading-snug">{{ title }}</h1>
             <div class="flex display-y pt-3 display-grey-500">
               <time datetime="{{ page.date }}" class="text-base text-primary font-bold">
                 {{ page.date | prettyDate }}
@@ -27,5 +28,6 @@
       </div>
     </main>
     {% include 'partials/blog-footer.njk' %}
+    {% include 'partials/serviceworker.njk' %}
   </body>
 </html>
