@@ -1,4 +1,3 @@
-const { blue } = require("tailwindcss/colors");
 const colors = require("tailwindcss/colors");
 
 const gruvbox = {
@@ -72,7 +71,8 @@ module.exports = {
       paper: gruvbox.light[0],
       primary: gruvbox.dark[0],
       secondary: gruvbox.red.neutral,
-    ...gruvbox},
+      ...gruvbox,
+    },
     fontFamily: {
       sans: [
         // "Arvo",

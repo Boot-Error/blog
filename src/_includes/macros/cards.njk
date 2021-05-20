@@ -1,18 +1,13 @@
 {% from "macros/tags.njk" import tags %}
 
 {% macro postCard(post) %}
-  <section class="mt-3 py-3 px-2 shadow-sm hover:shadow-lg">
-    <p class="text-sm font-semibold text-primary">{{ post.data.date | prettyDate }}</p>
-    <div class="pb-3">
-      <a class="font-bold text-2xl text-secondary" href="{{ post.url | url }}">{{post.data.title}}</a>
-    </div>
-    <div class="pb-3">
-      {% if post.data.tldr %}
-      <p>{{ post.data.tldr }}</p>
-      {% else %}
-      <p>{{ "hello, world <!--more--> xyz" | excerpt }}
-      {% endif %}
+  <article class="post-card">
+    <time datetime="{{ page.date }}" class="text-base text-dark-4 font-bold">
+      {{ post.data.date | prettyDate }}
+    </time>
+    <div class="">
+      <a class="font-bold text-2xl text-primary" href="{{ post.url | url }}">{{post.data.title}}</a>
     </div>
     <div>{{ tags(post.data.tags) }}</div>
-  </section>
+  </article>
 {% endmacro %}

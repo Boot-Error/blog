@@ -13,6 +13,7 @@ ul.markdown {
   }
 }
 
+
 ol.markdown {
   @apply text-lg font-normal text-primary px-7 pt-3 list-inside list-decimal;
   code {

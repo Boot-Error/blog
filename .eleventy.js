@@ -1,16 +1,19 @@
 const _ = require("lodash");
 const moment = require("moment");
 const { spawnSync } = require("child_process");
+const path = require('path')
+const postcss = require('postcss')
+const postcssPlugins = require('./postcss.config')
 const purgeCssPlugin = require("eleventy-plugin-purgecss");
-const readMorePlugin = require("eleventy-plugin-read-more");
 const pwaPlugin = require("eleventy-plugin-pwa");
 const jsonFeedPlugin = require("eleventy-plugin-json-feed");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const excerptPlugin = require("eleventy-plugin-excerpt")
 
 const compilePostcss = () => {
   console.log("Compiling postcss..");
   const postcss_job = spawnSync("./node_modules/.bin/postcss", [
-    "src/_includes/postcss/*.pcss",
+    "src/_includes/postcss/*.css",
     "--dir",
     "public/css",
     "--ext",
@@ -21,6 +24,17 @@ const compilePostcss = () => {
     console.log(postcss_job.status.toString());
   }
 };
+
+// const compilePostcss = (files) => {
+//   const processor = postcss(postcssPlugins)
+//   files.forEach(cssFile => {
+//     console.log(`Compiling ${cssFile}`)
+//     processor.process(``, {
+//       from: cssFile,
+//       to: `./public/${path.basename(cssFile)}`
+//     })
+//   })
+// }
 
 const markdownLib = () => {
   const md = require("markdown-it");
@@ -90,6 +104,7 @@ const allPostsCollection = (collection) => {
   return allPosts;
 };
 
+
 module.exports = function (eleventyConfig) {
   // pass through copy
   eleventyConfig.addPassthroughCopy("./src/css/");
@@ -107,7 +122,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // build hooks
-  eleventyConfig.on("afterBuild", () => {
+  eleventyConfig.on("beforeBuild", () => {
     compilePostcss();
   });
 
@@ -117,8 +132,8 @@ module.exports = function (eleventyConfig) {
     quiet: false,
   });
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(readMorePlugin);
   eleventyConfig.addPlugin(pwaPlugin);
+  eleventyConfig.addPlugin(excerptPlugin);
   eleventyConfig.addPlugin(jsonFeedPlugin, {
     content_html: true,
     image_metadata_field_name: "social_media_image",

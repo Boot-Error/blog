@@ -25,3 +25,15 @@ h3 {
 a {
   @apply hover:underline;
 }
+
+.post-card {
+  @apply border-secondary border-l-4 mt-5 px-3;
+}
+
+main {
+  @apply mb-20 z-50;
+}
+
+footer > * {
+  z-index: -1;
+}

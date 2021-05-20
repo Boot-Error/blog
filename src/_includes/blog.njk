@@ -12,11 +12,11 @@
   <body>
     <main>
       {% include 'partials/blog-nav.njk' %}
-      <div class="container max-w-screen-md mx-auto lg:mt-20">
+      <div class="container max-w-screen-md mx-auto lg:mt-20 bg-paper">
         <article>
-          <header class="px-5 pt-7 pb-3 lg:mt-20">
+          <header class="px-5 pt-7 pb-4">
             <h1 class="text-5xl py-3 leading-snug">{{ title }}</h1>
-            <div class="flex display-y pt-3 display-grey-500">
+            <div class="flex display-y pt-2 pb-4 display-grey-500">
               <time datetime="{{ page.date }}" class="text-base text-primary font-bold">
                 {{ page.date | prettyDate }}
               </time>
@@ -27,7 +27,6 @@
         </article>
       </div>
     </main>
-    {% include 'partials/blog-footer.njk' %}
     {% include 'partials/serviceworker.njk' %}
   </body>
 </html>

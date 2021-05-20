@@ -4,7 +4,7 @@
   "description": "Personal Blog built using 11ty framework",
   "scripts": {
     "clean": "rimraf public src/css/styles.css",
-    "postcss": "postcss src/_includes/postcss/*.pcss --dir src/css --ext css",
+    "postcss": "postcss src/_includes/postcss/*.css --dir public/css --ext css",
     "dev": "npm run clean && eleventy --serve",
     "build": "npm run clean && NODE_ENV=production npm run postcss && eleventy"
   },
@@ -32,6 +32,7 @@
     "@toycode/markdown-it-class": "^1.2.4",
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.2",
+    "eleventy-plugin-excerpt": "^1.1.2",
     "postcss": "^8.2.15",
     "postcss-cli": "^8.3.1",
     "postcss-css-variables": "^0.18.0",
@@ -42,7 +43,6 @@
     "eleventy-plugin-json-feed": "0.0.7",
     "eleventy-plugin-purgecss": "^0.1.1",
     "eleventy-plugin-pwa": "^1.0.8",
-    "eleventy-plugin-read-more": "^1.0.2",
     "lodash": "^4.17.21",
     "markdown-it-anchor": "^7.1.0",
     "markdown-it-block-image": "0.0.3",

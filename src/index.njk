@@ -1,7 +1,7 @@
 --- 
-layout: base.njk 
-title: "Blog Index"
-type: index
+layout: base.njk
+title: "Blog Index" 
+type: index 
 ---
 
 {% from "macros/tags.njk" import tags %}
@@ -9,7 +9,7 @@ type: index
 
 {% include 'partials/blog-nav.njk' %}
 
-<header class="container mx-auto px-5 pt-10 max-w-screen-md">
+<header class="container mx-auto px-5 mt-16 mb-8 max-w-screen-md">
   {% include 'partials/blog-header.njk' %}
 </header>
 
@@ -21,7 +21,7 @@ type: index
   </div>
 </div>
 
-<section class="the-box mt-10 md:py-20">
+{# <section class="the-box mt-10 md:py-20">
   {% for year, yearPosts in collections.postsByYear %}
     <article class="mt-3">
       <h2 class="font-bold text-2xl">{{ year }}</h2>
@@ -32,4 +32,12 @@ type: index
       </div>
     </article>
   {% endfor %}
+</section> #}
+
+<section class="container max-w-screen-md mx-auto px-2 mt-6 md:py-20">
+  <div class="grid divide-x-reverse divive-dark-0">
+    {% for post in collections.posts %}
+      {{ postCard(post) }}
+    {% endfor %}
+  </div>
 </section>
