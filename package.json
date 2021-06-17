@@ -33,7 +33,7 @@
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.2",
     "eleventy-plugin-excerpt": "^1.1.2",
-    "postcss": "^8.2.15",
+    "postcss": "^8.3.5",
     "postcss-cli": "^8.3.1",
     "postcss-css-variables": "^0.18.0",
     "rimraf": "^3.0.2",
