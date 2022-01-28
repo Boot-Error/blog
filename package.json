@@ -28,7 +28,7 @@
   "homepage": "https://github.com/Boot-Error/blog#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@toycode/markdown-it-class": "^1.2.4",
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.2",
