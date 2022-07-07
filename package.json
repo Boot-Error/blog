@@ -46,7 +46,7 @@
     "lodash": "^4.17.21",
     "markdown-it-anchor": "^7.1.0",
     "markdown-it-block-image": "0.0.3",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "postcss-nested": "^5.0.5"
   }
 }
