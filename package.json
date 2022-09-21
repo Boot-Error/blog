@@ -30,7 +30,7 @@
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
     "@toycode/markdown-it-class": "^1.2.4",
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "^10.4.12",
     "cssnano": "^5.0.2",
     "eleventy-plugin-excerpt": "^1.1.2",
     "postcss": "^8.3.5",
